@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:03:51 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 13:23:59 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:16:12 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
     return dst;
 }
 
-int main()
+/* int main()
 {
     char str1[] = "Hola Mundo";
     char str2[14];
@@ -33,4 +33,4 @@ int main()
     printf("%s", str2);
 
     return 0;
-}
+} */

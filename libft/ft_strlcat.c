@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:21:29 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 16:09:55 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:19:08 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(const char *str)
+/* size_t	ft_strlen(const char *str)
 {
 	int	c;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str)
 		c++;
 	}
 	return (c);
-}
+} */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

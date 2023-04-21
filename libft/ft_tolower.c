@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 11:07:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 13:24:28 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:35:35 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int ft_tolower(int c)
 {
     if (c >= 'A' && c <= 'Z')
     {
