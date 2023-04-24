@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 18:10:34 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 15:34:16 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:23:29 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	count = 0;
 	while (src[count] != '\0')
 	{
-		count ++;
+		count++;
 	}
 	if (dstsize != 0)
 	{
@@ -29,7 +29,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		{
 			dst[i] = src[i];
 			i++;
-		}		
+		}
 		dst[i] = '\0';
 	}
 	return (count);

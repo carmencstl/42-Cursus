@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 11:07:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/24 10:23:40 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/24 12:28:05 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/24 14:06:36 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <unistd.h>
 #include "libft.h"
-#include <stdio.h> */
+#include <stdio.h>
+#include <string.h>
 
-int	ft_tolower(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	int	i;
+
+	i = 0;
+	while (((char *)s)[i] != '\0')
 	{
-		c += 32;
+		if (s[i] == c)
+		{
+			return ((char *)&s[i]);
+		}
+		i++;
 	}
-	return (c);
+	if (((char *)s)[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-    int a;
-    a = 'A';
-    printf("%d", ft_toupper(a));
+	int		c;
+
+	char = s[] = "Hello";
+	c = 'H';
+	printf("%s", ft_strchr(s, c));
 } */

@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:36:26 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/21 12:46:11 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/24 09:43:52 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	ft_atoi(char *str)
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if(str[i] == '-')
+	if (str[i] == '-')
 	{
 		signo = -1;
 		str++;
 	}
-	else if(str[i] == '+')
+	else if (str[i] == '+')
 	{
 		str++;
 	}

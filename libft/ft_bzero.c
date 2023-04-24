@@ -6,23 +6,23 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:37:47 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 13:44:13 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/24 09:48:08 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include <stdio.h>
-#include <string.h> */ 
-
+#include <string.h> */
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *ptr;
-    ptr = s;
-    while (n-- > 0)
-    {
-        *ptr++ = 0; 
-    }
+	unsigned char	*ptr;
+
+	ptr = s;
+	while (n-- > 0)
+	{
+		*ptr++ = 0;
+	}
 }
 
 /* int main()
@@ -36,4 +36,3 @@ void ft_bzero(void *s, size_t n)
 
     return 0;
 } */
-

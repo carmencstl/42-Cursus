@@ -6,31 +6,21 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:08:56 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/20 13:24:26 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:25:02 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strnstr(const char *s1, const char *s2, size_t n)
+/* char *ft_strnstr(const char *s1, const char *s2, size_t n)
 {
     
-}
-
-
-
-
-
-
-
-
-
-
+} */
 
 /* #include <stdio.h>
 #include <string.h>
 
-int main() {
+int	main(void) {
     char str[] = "¡Hola Mundo!";
     char substr[] = "Mundo";
     
@@ -38,10 +28,11 @@ int main() {
     
     if (result) {
         printf("Se encontró la subcadena '%s' en '%s'\n", substr, str);
-        printf("La subcadena comienza en el índice %ld de la cadena principal\n", result - str);
+        printf("La subcadena comienza en el índice
+		%ld de la cadena principal\n", result - str);
     } else {
         printf("La subcadena '%s' no se encontró en '%s'\n", substr, str);
     }
     
-    return 0;
+    return (0);
 } */

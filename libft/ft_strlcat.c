@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:21:29 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/21 12:19:08 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:27:33 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/* size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	c;
 
@@ -24,7 +24,7 @@
 		c++;
 	}
 	return (c);
-} */
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -45,7 +45,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (ft_strlen(dst) + ft_strlen(&src[y]));
 }
 
-
 /* int main(void)
 {
 	char dst[20] = "Hello";
@@ -53,9 +52,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t size = 20;
 
 	size_t len = ft_strlcat(dst, src, size);
-	printf("ft_strlcat: dst=\"%s\", src=\"%s\", dstsize=%lu, len=%lu\n", dst, src, size, len);
+	printf("ft_strlcat: dst=\"%s\", src=\"%s\", dstsize=%lu, len=%lu\n", dst,
+			src, size, len);
 
 	return (0);
 } */
-
-
