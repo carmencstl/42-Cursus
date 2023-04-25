@@ -6,21 +6,40 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 12:08:56 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/24 10:25:02 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:42:07 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* char *ft_strnstr(const char *s1, const char *s2, size_t n)
-{
-    
-} */
-
-/* #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
-int	main(void) {
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+	size_t	j;
+	size_t	s2_n;
+
+	s2_n = ft_strlen(s2);
+	if (s2_n == 0)
+		return ((char *)s1);
+	i = 0;
+	while (s1[i] != '\0' && i < n)
+	{
+		if (s1[i] == s2[0])
+		{
+			j = 1;
+			while (s2[j] != '\0' && s1[i + j] == s2[j] && i + j < n)
+				j++;
+			if (s2[j] == '\0')
+				return ((char *)&s1[i]);
+		}
+		i++;
+	}
+	return (NULL);
+}
+
+/* int	main(void) {
     char str[] = "¡Hola Mundo!";
     char substr[] = "Mundo";
     
@@ -35,4 +54,5 @@ int	main(void) {
     }
     
     return (0);
-} */
+}
+ */

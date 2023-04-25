@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 12:28:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/25 10:57:36 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/25 11:43:37 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/25 15:33:42 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	i;
+	char	*temp_b;
 
-	i = 0;
-	while (((char *)s)[i] != '\0')
+	temp_b = b;
+	while (len--)
 	{
-		if (((char *)s)[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		*temp_b++ = c;
 	}
-	if (((char *)s)[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (b);
 }
 
-/* int	main(void)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		c;
+	void	*ptr;
 
-	char = s[] = "Hello";
-	c = 'H';
-	printf("%s", ft_strchr(s, c));
-} */
+	ptr = malloc(count * size);
+	if (ptr != NULL)
+	{
+		ft_memset(ptr, 0, count * size);
+	}
+	return (ptr);
+}

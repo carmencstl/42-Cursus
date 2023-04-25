@@ -6,7 +6,7 @@
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 14:07:25 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/24 14:08:37 by cacastil         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:02:27 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,32 @@
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strrchr(const char *s, int c)
+size_t	ft_strlen(const char *str)
 {
-    int	i;
+	int	c;
 
-	i = 0;
-	while (((char *)s)[i] == '\0')
+	c = 0;
+	while (str[c] != '\0')
 	{
-		if (s[i] == c)
+		c++;
+	}
+	return (c);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
+
+	i = ft_strlen(s);
+	if (((char *)s)[i] == (char)c)
+		return ((char *)&s[i]);
+	while ((i) >= 0)
+	{
+		if (s[i] == (char)c)
 		{
 			return ((char *)&s[i]);
 		}
 		i--;
 	}
-	if (((char *)s)[i] == (char)c)
-		return ((char *)&s[i]);
 	return (NULL);
 }

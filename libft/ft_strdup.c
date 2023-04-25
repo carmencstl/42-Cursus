@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 12:28:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/25 10:57:36 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/25 14:44:35 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/25 15:07:41 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,34 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	int	c;
 
-	i = 0;
-	while (((char *)s)[i] != '\0')
+	c = 0;
+	while (str[c] != '\0')
 	{
-		if (((char *)s)[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		c++;
 	}
-	if (((char *)s)[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (c);
 }
 
-/* int	main(void)
+char	*ft_strdup(const char *src)
 {
-	int		c;
+	int		len;
+	char	*dest;
+	int		i;
 
-	char = s[] = "Hello";
-	c = 'H';
-	printf("%s", ft_strchr(s, c));
-} */
+	i = 0;
+	len = ft_strlen(src);
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		return (NULL);
+	while ((char)src[i] != '\0')
+	{
+		dest[i] = (char)src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 12:28:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/25 10:57:36 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/25 15:12:16 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/25 16:27:43 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	int	c;
 
-	i = 0;
-	while (((char *)s)[i] != '\0')
+	c = 0;
+	while (str[c] != '\0')
 	{
-		if (((char *)s)[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		c++;
 	}
-	if (((char *)s)[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (c);
 }
 
-/* int	main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		c;
+	char	*dest;
+	size_t	i;
 
-	char = s[] = "Hello";
-	c = 'H';
-	printf("%s", ft_strchr(s, c));
-} */
+	dest = (char *)malloc((len + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (s[i] && i < len && i + start < ft_strlen(s))
+	{
+		dest[i] = s[i + start];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 12:28:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/25 10:57:36 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/25 10:42:46 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/25 11:12:01 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,16 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s1, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (((char *)s)[i] != '\0')
+	while (i < n)
 	{
-		if (((char *)s)[i] == (char)c)
-			return ((char *)&s[i]);
+		if (((unsigned char *)s1)[i] == (unsigned char)c)
+			return (&((char *)s1)[i]);
 		i++;
 	}
-	if (((char *)s)[i] == (char)c)
-		return ((char *)&s[i]);
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	int		c;
-
-	char = s[] = "Hello";
-	c = 'H';
-	printf("%s", ft_strchr(s, c));
-} */
