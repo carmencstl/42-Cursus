@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacastil <cacastil@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 11:14:05 by cacastil          #+#    #+#             */
-/*   Updated: 2023/04/26 13:49:54 by cacastil         ###   ########.fr       */
+/*   Created: 2023/04/26 11:11:29 by cacastil          #+#    #+#             */
+/*   Updated: 2023/04/26 13:48:32 by cacastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const unsigned char	*p1;
-	const unsigned char	*p2;
-	size_t				i;
-	int					result;
+	char	*nstr;
+	int		i;
+	int		j;
 
-	p1 = (const unsigned char *)s1;
-	p2 = (const unsigned char *)s2;
+	if (!s1 || !s2)
+		return (NULL);
+	nstr = malloc(sizeof(*nstr) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!nstr)
+		return (NULL);
 	i = 0;
-	result = 0;
-	while (i < n && result == 0)
-	{
-		result = (int)p1[i] - (int)p2[i];
-		i++;
-	}
-	return (result);
+	while (*s1)
+		nstr[i++] = *s1++;
+	j = 0;
+	while (*s2)
+		nstr[i + j++] = *s2++;
+	nstr[i + j] = '\0';
+	return (nstr);
 }
